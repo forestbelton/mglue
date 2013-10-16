@@ -1,0 +1,18 @@
+{
+  "name": "mglue",
+  "version": "0.0.1",
+  "author": "Forest Belton <forest@homolo.gy",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forestbelton/mglue.git"
+  },
+  "dependencies": {
+    "express": "2.5.1",
+    "ejs": "*",
+    "sqlite3": "*"
+  }
+}

@@ -1,0 +1,79 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+html, body, h1, input, textarea, p {
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#header, textarea, #form-new, #result {
+    width:760px;
+    margin:0 auto;
+}
+
+#header {
+    color:#34495e;
+    display:block;
+    text-decoration:none;
+    font-size:90px;
+    margin: 0.5em auto;
+    text-align:center;
+    border-bottom:2px solid #bdc3c7;
+}
+
+textarea, input[type="submit"] {
+    margin:2em auto;
+    display:block;
+    border-radius:6px;
+}
+
+textarea {
+    width:760px;
+    height:30em;
+    border:2px solid #bdc3c7;
+    resize:none;
+    outline:none;
+    padding:0.5em;
+    border-radius:6px;
+}
+
+#result {
+    width:760px;
+    margin:2em auto;
+}
+
+.error-msg {
+    color:#e74c3c;
+    display:none;
+    text-align:center;
+}
+
+.error > .error-msg {
+    display:block;
+}
+
+.error > textarea {
+    border-color:#ec7063;
+}
+
+.hide {
+    display:none;
+}
+
+input[type="submit"] {
+    width:470px;
+    cursor:pointer;
+    color:#fff;
+    border:0;
+    padding:13px 18px;
+    font-size:17px;
+    background:#34495e;
+}
+
+input[type="submit"]:active {
+    padding:17px 18px 9px;
+}
+
+#no-form > p:first-child {
+    text-align:center;
+}

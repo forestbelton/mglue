@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>MGlue</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <a href="/" id="header">MGlue</a>
+    <form id="form-new" action="/new" method="POST"<% if(contents){ %> class="hide"<% } %>>
+        <p>
+    Enter the text you would like to submit below. Use \(\backslash[...\backslash]\)
+    and \(\backslash(...\backslash)\) for block and inline LaTeX respectively.
+        </p>
+        <label for="contents" class="error-msg"></label>
+        <textarea name="contents"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="no-form"<% if(!contents){ %> class="hide"<% }%>>
+        <p>Want to submit again? Click on the title.</p>
+        <p id="result"><%= contents %></p>
+    </div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/js/main.js"></script>
+</html>
