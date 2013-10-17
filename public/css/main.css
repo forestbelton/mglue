@@ -3,26 +3,56 @@
 html, body, h1, input, textarea, p {
     margin:0;
     padding:0;
-    font-family: 'Open Sans', sans-serif;
+    font: 1em 'Open Sans', sans-serif;
 }
 
-#header, textarea, #form-new, #result {
+textarea, #form-new, #result {
     width:760px;
     margin:0 auto;
 }
 
 #header {
+    width:777px;
     color:#34495e;
     display:block;
     text-decoration:none;
     font-size:90px;
-    margin: 0.5em auto;
+    margin:0.1em auto 0.5em auto;
     text-align:center;
     border-bottom:2px solid #bdc3c7;
 }
 
-textarea, input[type="submit"] {
+#lightbox .close {
+    float:right;
+    display:block;
+    color:#ccc;
+    cursor:pointer;
+    font-size:15px;
+    margin-top:-5px;
+}
+
+.buttons button, .buttons input{
+    display:inline-block;
+    float:left;
+    margin-right: 0.6em;
+}
+
+#lightbox {
+    position:absolute;
+    overflow: auto;
+    display:none;
+    background:#f8fafc;
+    padding:0.5em;
+    word-wrap: break-word;
+    border:1px solid #bdc3c7;
+    width:600px;
+    z-index:10;
+    height:500px;
+}
+textarea {
     margin:2em auto;
+}
+textarea, input[type="submit"] {
     display:block;
     border-radius:6px;
 }
@@ -32,8 +62,8 @@ textarea {
     height:30em;
     border:2px solid #bdc3c7;
     resize:none;
+    padding:0.2em;
     outline:none;
-    padding:0.5em;
     border-radius:6px;
 }
 
@@ -58,6 +88,17 @@ textarea {
 
 .hide {
     display:none;
+}
+
+.preview {
+    width:100px;
+    cursor:pointer;
+    color:#fff;
+    border:0;
+    border-radius:6px;
+    padding:14px 18px;
+    font-size:17px;
+    background:#34495e;
 }
 
 input[type="submit"] {

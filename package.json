@@ -13,6 +13,6 @@
   "dependencies": {
     "express": "2.5.1",
     "ejs": "*",
-    "sqlite3": "*"
+    "mongodb": "*"
   }
 }

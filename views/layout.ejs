@@ -14,11 +14,14 @@
         </p>
         <label for="contents" class="error-msg"></label>
         <textarea name="contents"></textarea>
-        <input type="submit" value="Submit">
+        <div class="buttons">
+            <button class="preview">Preview</button>
+            <input type="submit" value="Submit">
+        </div>
     </form>
     <div id="no-form"<% if(!contents){ %> class="hide"<% }%>>
         <p>Want to submit again? Click on the title.</p>
-        <p id="result"><%= contents %></p>
+        <p id="result"><%- contents.replace(separator, '<br />', 'g') %></p>
     </div>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
