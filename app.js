@@ -1,5 +1,6 @@
 var express = require('express');
 var sqlite3 = require('sqlite3');
+var os      = require('os');
 var crypto  = require('crypto');
 
 var app = express.createServer();
@@ -12,6 +13,7 @@ app.use(function(req, res, next) {
     console.log('[' + new Date() + '] ' + req.socket.remoteAddress + ' - ' + req.originalUrl);
     next();
 });
+
 app.set('view engine', 'ejs');
 
 app.post('/new', function(req, res) {
@@ -26,7 +28,6 @@ app.post('/new', function(req, res) {
         db.run('CREATE TABLE IF NOT EXISTS pastes (hash TEXT, contents TEXT)');
         db.run('INSERT INTO pastes VALUES (?, ?)', hash, contents);
     });
-
     res.send(JSON.stringify({ hash: hash }));
 });
 
@@ -35,13 +36,15 @@ app.get('/:hash', function(req, res) {
         res.send('Fuck off', 500);
         return;
     }
-
     var hash = req.params.hash;
     db.serialize(function() {
         db.run('CREATE TABLE IF NOT EXISTS pastes (hash TEXT, contents TEXT)');
         db.get('SELECT contents FROM pastes WHERE hash = ?', hash, function(err, row) {
             if(typeof row !== 'undefined') {
-                res.render('layout', {contents: row.contents});
+                res.render('layout', {
+                    contents:  row.contents,
+                    separator: os.EOL
+                });
             } else {
                 res.send('Paste not found', 404);
             }
@@ -50,7 +53,7 @@ app.get('/:hash', function(req, res) {
 });
 
 app.get('*', function(req, res) {
-    res.render('layout', {contents: ''});
+    res.render('layout', {contents: '', separator: os.EOL});
 });
 
 app.listen(3000);

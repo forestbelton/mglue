@@ -26,7 +26,8 @@
         .then(function(data) {
             history.pushState(null, 'MGlue', '/' + data.hash);
             $form.hide();
-            $res.text(contents);
+            $res.html('');
+            contents.split(/[\r\n]+/).map(function(l) { $res.append($('<p>').text(l)); });
             $paste.show();
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, 'result']);
         });

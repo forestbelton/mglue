@@ -6,12 +6,13 @@ html, body, h1, input, textarea, p {
     font-family: 'Open Sans', sans-serif;
 }
 
-#header, textarea, #form-new, #result {
+textarea, #form-new, #result {
     width:760px;
     margin:0 auto;
 }
 
 #header {
+    width:777px;
     color:#34495e;
     display:block;
     text-decoration:none;
