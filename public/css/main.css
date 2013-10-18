@@ -3,7 +3,7 @@
 html, body, h1, input, textarea, p {
     margin:0;
     padding:0;
-    font-family: 'Open Sans', sans-serif;
+    font: 1em 'Open Sans', sans-serif;
 }
 
 textarea, #form-new, #result {
