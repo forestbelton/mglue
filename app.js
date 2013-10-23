@@ -43,7 +43,7 @@ mongo.MongoClient.connect(process.env.MONGOHQ_URL, function(err, db) {
                 return;
             }
             coll.findOne({hash: req.params.hash}, function(err, doc) {
-                if(err) {
+                if(!doc || !doc.contents) {
                     res.send('Paste not found', 404);
                 } else {
                     res.render('layout', {
