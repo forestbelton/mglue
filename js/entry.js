@@ -1,1 +1,3 @@
-console.log("Hello, world!");
+import React from 'react';
+
+React.render(<div />, document.body);
