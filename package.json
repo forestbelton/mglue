@@ -4,7 +4,8 @@
   "description": "A pastebin for math snippets",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'No tests specified' && exit 1"
+    "test": "echo 'No tests specified' && exit 1",
+    "start": "./node_modules/.bin/webpack-dev-server --content-base public/ --hot --config webpack-dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/forestbelton/mglue/issues"
   },
-  "homepage": "https://github.com/forestbelton/mglue"
+  "homepage": "https://github.com/forestbelton/mglue",
+  "devDependencies": {
+    "babel-core": "^5.1.13",
+    "babel-loader": "^5.0.0",
+    "webpack": "^1.8.10",
+    "webpack-dev-server": "^1.8.2"
+  }
 }
