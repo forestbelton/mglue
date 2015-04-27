@@ -10,6 +10,7 @@ export default createStore({
     handlers: {
         'set-gist': function(payload) {
             this._gists[payload.url] = payload.content;
+            this.emitChange();
         }
     },
 
