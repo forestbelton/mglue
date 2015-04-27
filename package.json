@@ -1,0 +1,19 @@
+{
+  "name": "mglue",
+  "version": "1.0.0",
+  "description": "A pastebin for math snippets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'No tests specified' && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forestbelton/mglue.git"
+  },
+  "author": "Forest Belton <forest@homolo.gy>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forestbelton/mglue/issues"
+  },
+  "homepage": "https://github.com/forestbelton/mglue"
+}
