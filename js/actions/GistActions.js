@@ -3,14 +3,11 @@ import request from 'superagent';
 const GIST_API_URL = 'https://api.github.com/gists';
 
 const setGist = (dispatcher) => {
-    return (resp) => {
-        if(resp.ok) {
-            const url = new RegExp('^${GIST_API_URL}/(.*)$')
-                .exec(resp.body.html_url);
-
+    return (err, resp) => {
+        if(!err) {
             dispatcher.dispatch('set-gist', {
-                url,
-                content: resp.files.paste.content
+                url: resp.body.html_url.slice('https://gist.github.com/'.length),
+                content: resp.body.files.paste.content
             });
         }
     }
@@ -35,7 +32,7 @@ export default {
 
     fetchGist: function(dispatcher, url) {
         request
-            .get('${GIST_API_URL}/${url}')
+            .get(`${GIST_API_URL}/${url}`)
             .end(setGist(dispatcher));
     }
 };
